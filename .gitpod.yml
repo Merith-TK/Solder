@@ -1,0 +1,19 @@
+image:
+  file: .gitpod/workspace.Dockerfile
+
+tasks:
+  - name: Download Resonite
+    init: |
+      steamcmd +login anonymous +force_install_dir /tmp/resonite +app_update 2519830 +quit
+
+  - name: BuildClient
+    init: |
+      cd Solder.Client
+      make
+
+
+vscode:
+  extensions:
+    - muhammad-sammy.csharp
+    - neikeq.godot-csharp-vscode
+    - geequlim.godot-tools
